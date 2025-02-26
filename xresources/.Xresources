@@ -1,0 +1,21 @@
+! Set normal font
+xterm*faceName: JetBrainsMono Nerd Font
+xterm*faceSize: 12
+ 
+! Set bold font
+xterm*faceNameBold: JetBrainsMono Nerd Font
+xterm*faceSizeBold: 12
+ 
+! Set italic font (not all terminals support this)
+xterm*faceNameItalic: JetBrainsMono Nerd Font
+xterm*faceSizeItalic: 12
+ 
+! Set bold+italic font
+xterm*faceNameBoldItalic: JetBrainsMono Nerd Font
+xterm*faceSizeBoldItalic: 12
+ 
+! Enable clipboard commands (CTRL + C and V)
+xterm*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+
