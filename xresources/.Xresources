@@ -1,3 +1,5 @@
+# include "xthemes/catppuccin/macchiato.Xresources"
+
 ! Set normal font
 xterm*faceName: JetBrainsMono Nerd Font
 xterm*faceSize: 12
