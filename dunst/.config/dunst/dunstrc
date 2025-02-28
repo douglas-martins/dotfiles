@@ -1,6 +1,12 @@
 # See dunst(5) for all configuration options
 
 [global]
+    # Include the theme file
+    # include = $HOME/.config/dunst/themes/macchiato.conf
+    frame_color = "#8aadf4"
+    separator_color= frame
+    highlight = "#8aadf4"
+
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
@@ -36,7 +42,8 @@
     #       and the given value is treated as the maximum height
 
     # Position the notification in the top right corner
-    origin = top-right
+    # origin = top-right
+    origin = bottom-right
 
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
@@ -341,24 +348,30 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
+    # background = "#222222"
+    # foreground = "#888888"
+    background = "#24273a"
+    foreground = "#cad3f5"
     timeout = 10
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    # background = "#285577"
+    # foreground = "#ffffff"
+    background = "#24273a"
+    foreground = "#cad3f5"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency
     default_icon = dialog-information
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
-    frame_color = "#ff0000"
+    # background = "#900000"
+    # foreground = "#ffffff"
+    background = "#24273a"
+    foreground = "#cad3f5"
+    frame_color = "#f5a97f"
     timeout = 0
     override_pause_level = 60
     # Icon for notifications with critical urgency
