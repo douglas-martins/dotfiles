@@ -118,7 +118,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    # frame_color = "#aaaaaa"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -151,7 +151,7 @@
 
     ### Text ###
 
-    font = Monospace 8
+    font = JetBrainsMono Nerd Font 12
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -242,7 +242,7 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 128
+    max_icon_size = 64
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -334,48 +334,46 @@
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
-# Experimental features that may or may not work correctly. Do not expect them
-# to have a consistent behaviour across releases.
-[experimental]
-    # Calculate the dpi to use on a per-monitor basis.
-    # If this setting is enabled the Xft.dpi value will be ignored and instead
-    # dunst will attempt to calculate an appropriate dpi value for each monitor
-    # using the resolution and physical size. This might be useful in setups
-    # where there are multiple screens with very different dpi values.
-    per_monitor_dpi = false
+    # Experimental features that may or may not work correctly. Do not expect them
+    # to have a consistent behaviour across releases.
+    [experimental]
+        # Calculate the dpi to use on a per-monitor basis.
+        # If this setting is enabled the Xft.dpi value will be ignored and instead
+        # dunst will attempt to calculate an appropriate dpi value for each monitor
+        # using the resolution and physical size. This might be useful in setups
+        # where there are multiple screens with very different dpi values.
+        per_monitor_dpi = false
 
 
-[urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    # background = "#222222"
-    # foreground = "#888888"
-    background = "#24273a"
-    foreground = "#cad3f5"
-    timeout = 10
-    # Icon for notifications with low urgency
-    default_icon = dialog-information
+    [urgency_low]
+        # IMPORTANT: colors have to be defined in quotation marks.
+        # Otherwise the "#" and following would be interpreted as a comment.
+        background = "#24273a"
+        foreground = "#cad3f5"
+        timeout = 10
+        # Icon for notifications with low urgency
+        default_icon = dialog-information
 
-[urgency_normal]
-    # background = "#285577"
-    # foreground = "#ffffff"
-    background = "#24273a"
-    foreground = "#cad3f5"
-    timeout = 10
-    override_pause_level = 30
-    # Icon for notifications with normal urgency
-    default_icon = dialog-information
+    [urgency_normal]
+        # background = "#285577"
+        # foreground = "#ffffff"
+        background = "#24273a"
+        foreground = "#cad3f5"
+        timeout = 10
+        override_pause_level = 30
+        # Icon for notifications with normal urgency
+        default_icon = dialog-information
 
-[urgency_critical]
-    # background = "#900000"
-    # foreground = "#ffffff"
-    background = "#24273a"
-    foreground = "#cad3f5"
-    frame_color = "#f5a97f"
-    timeout = 0
-    override_pause_level = 60
-    # Icon for notifications with critical urgency
-    default_icon = dialog-warning
+    [urgency_critical]
+        # background = "#900000"
+        # foreground = "#ffffff"
+        background = "#24273a"
+        foreground = "#cad3f5"
+        frame_color = "#f5a97f"
+        timeout = 0
+        override_pause_level = 60
+        # Icon for notifications with critical urgency
+        default_icon = dialog-warning
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
