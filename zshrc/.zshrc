@@ -93,7 +93,7 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 # Aliases
 alias ls='ls --color'
-# alias vim='nvim'
+alias vim='nvim'
 alias vi='vim'
 alias c='clear'
 alias nexdomvpn='sudo openvpn --config /etc/openvpn/client/openvpn.fesc.sgusuite.com.br.ovpn --auth-nocache --auth-user-pass /etc/openvpn/client/login.conf' 
