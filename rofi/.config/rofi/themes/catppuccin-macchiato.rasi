@@ -63,26 +63,64 @@ listview {
   lines: 5;
   background-color: @bg-col;
 }
- 
-element normal.normal, normal.urgent, normal.active {
-  padding: 5px;
-  background-color: @bg-col;
-  text-color: @fg-col;
+
+scrollbar {
+  background-color: @bg-col-light;
+  handle-color: @fg-col;
 }
 
-element alternate.normal, alternate.urgent, alternate.active {
-  padding: 5px;
-  background-color: @bg-col;
-  text-color: @fg-col;
-}
- 
 element-icon {
   size: 25px;
 }
- 
-element selected.normal, selected.urgent, selected.active {
+
+element {
+  children: [element-icon, element-text];
+  padding: 5px;
+}
+
+element.normal.normal {
   background-color: @bg-col;
-  text-color: @fg-col2;
+  text-color:       @fg-col;
+}
+
+element.normal.urgent {
+  background-color: @bg-col;
+  text-color:       @fg-col;
+}
+
+element.normal.active {
+  background-color: @bg-col;
+  text-color:       @fg-col;
+}
+
+element.selected.normal {
+  background-color: @bg-col;
+  text-color:       @fg-col2;
+}
+
+element.selected.urgent {
+  background-color: @bg-col;
+  text-color:       @fg-col2;
+}
+
+element.selected.active {
+  background-color: @bg-col;
+  text-color:       @fg-col2;
+}
+
+element.alternate.normal {
+  background-color: @bg-col;
+  text-color:       @fg-col;
+}
+
+element.alternate.urgent {
+  background-color: @bg-col;
+  text-color:       @fg-col;
+}
+
+element.alternate.active {
+  background-color: @bg-col;
+  text-color:       @fg-col;
 }
  
 mode-switcher {
@@ -97,7 +135,7 @@ button {
   horizontal-align: 0.5;
 }
  
-button selected {
+button selected.normal, selected.urgent, selected.active {
   background-color: @bg-col;
   text-color: @blue;
 }
