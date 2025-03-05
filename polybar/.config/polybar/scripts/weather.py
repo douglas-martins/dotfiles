@@ -10,8 +10,11 @@ import json
 # Settings
 api_key="aa39558ba6af72ff0f0ece0d1135c570"
 city="Sao+Jose,SC,BR"
+lat="-27.572935893668593"
+lon="-48.60687635686367"
 units = "metric" # Unit system {imperial or metric}
 temperature_unit = "C" # Units of measurement. That will be showed in UI. Does not affect on API.
+base_url="http://api.openweathermap.org/data/2.5/weather?"
 
 icons_list = {
     "01d": "", # Clear sky day.
@@ -49,30 +52,28 @@ atmophere_icons_list = {
 
 def main():
     try:
-        # Get data from openweather
-        url = ('http://api.openweathermap.org/data/2.5/weather?q={}&units={}&appid={}').format(city, units, api_key)
+        query = f"lat={lat}&lon={lon}&units={units}&appid={api_key}"
+        url = f"{base_url}{query}"
+
         result = requests.get(url)
 
-        # If result was received
-        if(result.status_code == requests.codes['ok']):
-                # Read json
-                weather = result.json()
+        if (result.status_code == requests.codes['ok']):
+            weather = result.json()
 
-                # Get info from array
-                w_id = int(weather['weather'][0]['id'])
-                group = weather['weather'][0]['main'].capitalize()
-                icon = weather['weather'][0]['icon'].capitalize()
-                temp = int(float(weather['main']['temp']))
+            w_id = int(weather['weather'][0]['id'])
+            group = weather['weather'][0]['main'].capitalize()
+            icon = weather['weather'][0]['icon'].capitalize()
+            temp = int(float(weather['main']['temp']))
 
-                # Load another icons for Atmosphere group
-                if (group == "Atmosphere"):
-                    return atmophere_icons_list[w_id] + ' {}°{}'.format(temp, temperature_unit)
+            # Load another icons for Atmosphere group
+            if (group == "Atmosphere"):
+                return f"{atmophere_icons_list[w_id]} {temp}°{temperature_unit}"
 
-                return icons_list[icon] + '%{F${foreground' + ' {}°{}'.format(temp, temperature_unit) + '%{F-}'
+            return icons_list[icon] + ' %{F${foreground' + ' {}°{}'.format(temp, temperature_unit) + '%{F-}'
         else:
             return "" # Return reload icon
     except:
         return "" # Return reload icon
 
 if __name__ == "__main__":
-	print(main())
+    print(main())
