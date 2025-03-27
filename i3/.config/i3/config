@@ -75,11 +75,11 @@ bindsym $mod+Shift+q kill
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # Rofi drun
-bindsym $mod+d exec --no-startup-id env XDG_DATA_DIRS=/usr/share:/usr/local/share rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun
 # Rofi combi
-bindsym $mod+space exec --no-startup-id env XDG_DATA_DIRS=/usr/share:/usr/local/share rofi -show combi
+bindsym $mod+space exec --no-startup-id rofi -show combi
 # Rofi window
-bindsym $mod+Tab exec --no-startup-id rofi env XDG_DATA_DIRS=/usr/share:/usr/local/share -show window
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 # Rofi emoji
 bindsym $mod+Shift+e exec --no-startup-id rofi -show emoji
 # Rofi calc
