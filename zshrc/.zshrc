@@ -53,6 +53,7 @@ zinit snippet OMZP::mvn
 zinit snippet OMZP::npm
 zinit snippet OMZP::node
 zinit snippet OMZP::python
+zinit snippet OMZP::golang
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -88,15 +89,14 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # append completions to fpath
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
-# append completions to fpath
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-
-# Aliases
+# General Aliases
 alias ls='ls --color'
 alias vim='nvim'
 alias vi='vim'
 alias c='clear'
-alias nexdomvpn='sudo openvpn --config /etc/openvpn/client/openvpn.fesc.sgusuite.com.br.ovpn --auth-nocache --auth-user-pass /etc/openvpn/client/login.conf' 
+
+# Nexdom Aliases
+alias nexdomvpn='sudo openvpn --config /etc/openvpn/client/openvpn.fesc.sgusuite.com.br.ovpn --auth-nocache --auth-user-pass /etc/openvpn/client/login.conf'
 
 # Shell integrations
 eval "$(fzf --zsh)"
